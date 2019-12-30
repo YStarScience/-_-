@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>职业分析</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../static/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="../static/assets/lineicons/style.css">
+    
+    <!-- Custom styles for this template -->
+    <link href="../static/assets/css/style.css" rel="stylesheet">
+    <link href="../static/assets/css/style-responsive.css" rel="stylesheet">
+
+    <script src="../static/assets/js/funcmain.js" type="text/javascript"></script>
+
+    <!-- image -->
+    <script type="text/jscript" src="../static/assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/jscript">
+      $(function () {
+          $("#all li").mouseover(function () {//鼠标进入离开事件
+              $(this).css("background-color", "#ff00ff").siblings().css("background-color", "white");
+              $(this).css({ "background-color": "red", "font-size": "9px" }).siblings().hide();
+          });
+          $(window).scroll(function () {//鼠标滚动事件
+              var _top = $(window).scrollTop(); //获得鼠标滚动的距离
+          });
+          //手动播放图片
+          $(".btn1 ul li").hover(function () {
+              $(this).addClass("one").siblings().removeClass("one");
+              index = $(this).index();
+              i = index;
+              $(".pic a").eq(index).stop().fadeIn(500).show().siblings().stop().fadeIn(500).hide();
+          });
+          //自动播放图片
+          var i = 0;
+          var t = setInterval(autoplay, 2000);
+          function autoplay() {
+              i++;
+              if (i > 4) i = 0;
+              $(".btn1 ul li").eq(i).addClass("one").siblings().removeClass("one");
+              $(".pic a").eq(i).stop().fadeIn(500).show().siblings().stop().fadeIn(500).hide();
+          }
+          $("#banner").hover(function () {
+              clearInterval(t);
+          }, function () {
+              t = setInterval(autoplay, 2000);
+          });
+      });
+    </script>
+
+
+    <script src="../static/assets/js/chart-master/Chart.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a class="logo"><b>职业需求分析</b></a>
+            <!--logo end-->
+            <div class="top-menu">
+              <ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="articles/us.html">关于我们</a></li>
+              </ul>
+            </div>
+      </header>
+      <!--header end-->
+ 
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a><img src="../static/assets/img/1.jpg" class="img-circle" width="100"></a></p>
+              	  <h5 class="centered">参考列表</h5>
+              	  	
+                  <li class="mt">
+                      <a class="active" href="main.html">
+                          <i class="fa fa-dashboard"></i>
+                          <span>主页</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="location.html" >
+                          <i class="li_location"></i>
+                          <span>职位地域分布</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu" onclick="f3();">
+                      <a>
+                          <i class="li_banknote"></i>
+                          <span>省份工资调查</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu" onclick="window.location.href='resume.html'">
+                      <a>
+                          <i class="li_search"></i>
+                          <span>简历分析</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>科普小文章</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="articles/1.html">信息时代</a></li>
+                          <li><a  href="articles/2.html">大数据时代</a></li>
+                          <li><a  href="articles/3.html">云计算</a></li>
+                          <li><a  href="articles/4.html">数据挖掘</a></li>
+                          <li><a  href="articles/5.html">大数据存储</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+     
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+              <div class="row">
+              
+                  <div class="col-lg-9 main-chart">
+                  
+                  	<div class="row mtbox">
+                  		<div class="col-md-5 col-sm-4 col-md-offset-1 box0" href="salary.html">
+                        <a href="zhuanye/ruanjiankaifa.html">
+                  			<div class="box1">
+					  			        <span class="li_display"></span>
+					  			        <h3>计算机专业职位薪水分析</h3>
+                  			 </div>
+					  			        <p>计算机专业薪水最高的前十名招聘职位</p>
+                        </a>
+                  		</div>
+
+                      <div class="col-md-5 col-sm-4 col-md-offset-1 box0">
+                        <a href="xuqiu/ruanjiankaifa.html">
+                        <div class="box1">
+                          <span class="li_display"></span>
+                          <h3>计算机相关专业技能分析</h3>
+                        </div>
+                        <p>计算机相关专业技能需求前十名</p>
+                        </a>
+                      </div>
+                  		
+                  		<div class="col-md-5 col-sm-4 col-md-offset-1 box0" >
+                        <a href="/position.html">
+                  			<div class="box1">
+					  			      <span class="li_data"></span>
+					  			        <h3>大数据职位需求量行业分析</h3>
+                  			</div>
+					  		      	<p>大数据职位需求量最高的前十大行业</p>
+                        </a>
+                  	  </div>
+
+                      <div class="col-md-5 col-sm-4 col-md-offset-1 box0">
+                        <a href="city.html">
+                        <div class="box1">
+                        <span class="li_data"></span>
+                        <h3>大数据职位需求量城市分析</h3>
+                        </div>
+                        <p>大数据职位需求量最高的前十名城市</p>
+                        </a>
+                      </div>
+                  		
+                      <div class="col-md-5 col-sm-4 col-md-offset-1 box0">
+                        <a href="talents.html">
+                        <div class="box1">
+                          <span class="li_study"></span>
+                          <h3>企业所需数据人才分析</h3>
+                        </div>
+                        <p>企业对哪类大数据人才需求最为迫切</p>
+                        </a>
+                      </div>
+
+                      <div class="col-md-5 col-sm-4 col-md-offset-1 box0">
+                        <a href="welfare.html">
+                        <div class="box1">
+                          <span class="li_study"></span>
+                          <h3>企业所提供福利分析</h3>
+                        </div>
+                        <p>企业通常提供给员工那种社会福利</p>
+                        </a>
+                      </div>
+                      <!--简历分析-->
+                      <div class="col-lg-6 " style="display:none;z-index:1;position:absolute;left: 300px;top: 50px" id="tab1">
+                      
+                        <div class="grey-panel  donut-chart">
+                          <div class="grey-header">
+                            <h3>简历分析</h3>
+                          </div>
+                          <form class="form-horizontal tasi-form" method="get" action="resume.html" onsubmit="return checklength()">
+                            <div class="form-group">
+                              <label class="col-md-4  col-sm-4"><h3>姓名：</h3></label>
+                              
+                                <input type="text"  class="form-control" placeholder="请输入姓名">
+                             
+                            </div>
+                            <div class="form-group">
+                              <label class="col-md-4  col-sm-4"><h3>省份：</h3></label>
+                              <select class="form-control" >
+                                <option>安徽</option>
+                                <option>北京</option>
+                                <option>重庆</option>
+                                <option>福建</option>
+                                <option>甘肃</option>
+                                <option>广东</option>
+                                <option>广西</option>
+                                <option>贵州</option>
+                                <option>海南</option>
+                                <option>河北</option>
+                                <option>河南</option>
+                                <option>黑龙江</option>
+                                <option>湖北</option>
+                                <option>湖南</option>
+                                <option>吉林</option>
+                                <option>江苏</option>
+                                <option>江西</option>
+                                <option>辽宁</option>
+                                <option>内蒙古</option>
+                                <option>宁夏</option>
+                                <option>青海</option>
+                                <option>山东</option>
+                                <option>山西</option>
+                                <option>陕西</option>
+                                <option>上海</option>
+                                <option>四川</option>
+                                <option>天津</option>
+                                <option>西藏</option>
+                                <option>新疆</option>
+                                <option>云南</option>
+                                <option>浙江</option>
+                               
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-md-4  col-sm-4"><h3>技能：</h3></label>
+                              <select class="form-control" >
+                                <option>软件开发</option>
+                                <option>软件测试</option>
+                                <option>网络安全</option>
+                                <option>通信原理</option>
+                                <option>电子商务</option>
+                                <option>多媒体设计</option>
+                              </select>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label class="col-md-4  col-sm-4"><h3>个人描述：</h3></label>
+                                <textarea rows="4" class="form-control2" placeholder="该匹配结果与您输入的有效关键词的长度有关，为保证匹配的准确性，请尽可能输入二十个字及以上的不包括任何其他无关字符的简历内容" style="resize: none;height: 100px" id="mytext"></textarea>
+                            </div>
+
+
+                            <div class="form-group">
+                              <label class="col-md-6  col-sm-6"><h3>是否有工作经验：</h3></label>
+                              <select class="form-control1" >
+                                <option>是</option>
+                                <option>否</option>
+                              </select>
+                            </div>
+                            
+                            <br/>
+                            <div class="form-group">
+                              
+                              <div class="col-md-6  col-sm-3">
+                                <button type="submit" class="btn btn-danger" ><h4>提交</h4></button>
+                              </div>
+                              <div class="col-md-6  col-sm-3">
+                                <button type="button" class="btn btn-danger" onclick="f1()"><h4>取消</h4></button>
+                              </div>
+                            </div>
+                            <br/>
+
+                          </form>
+                        </div>
+                        
+                    </div>
+                    
+
+                    <!--省份调查分析-->
+                    <div class="col-lg-6 " style="display:none;z-index:1;position:absolute;left: 300px;top: 150px" id="tab3">
+                      
+                        <div class="grey-panel  donut-chart">
+                          <div class="grey-header">
+                            <h3>省份工资调查</h3>
+                          </div>
+                          <form class="form-horizontal tasi-form">
+                            <div class="form-group">
+                              <label class="col-md-4  col-sm-4"><h3>省份：</h3></label>
+                              <select  name="province" class="form-control" id="province">
+                                <option value="0">北京</option>
+                                <option value="1">重庆</option>
+                                <option value="2">福建</option>
+                                <!--<option value="3">广东</option>-->
+                                <option value="4">河北</option>
+                                <option value="5">湖南</option>
+                                <option value="6">江苏</option>
+                                <option value="7">山东</option>
+                                <option value="8">上海</option>
+                                <option value="9">浙江</option>
+                              </select>
+                            </div>
+                            <br/>
+                            <div class="form-group">
+                              <div class="col-md-6  col-sm-3">
+                                <button type="button" class="btn btn-danger" onclick="setsubmit(this)"><h4>提&nbsp;交</h4></button>
+                              </div>
+                               <div class="col-md-6  col-sm-3">
+                                <button type="button" class="btn btn-danger" onclick="f3()"><h4>取&nbsp;消</h4></button>
+                              </div>
+                            </div>
+                            <br/>
+
+                          </form>
+                        </div>
+                        
+                    </div>      
+                          
+                  	
+                  	</div><!-- /row mt--> 
+                    
+                    
+              </div>
+              <div class="col-lg-3 ds" >
+                  <h3>就业前景预测</h3>
+                                        
+                      <!-- First Action -->
+                      <div class="desc">
+                        &nbsp;
+                        <p>
+                          <a href="screen.html"><button type="button" class="btn btn-primary btn-lg btn-block"><span class=" li_search"></span>&nbsp;锁屏</button></a>
+                        </p>
+                      
+                        &nbsp;
+                         <p>
+                          <a href="keyword.html"><button type="button" class="btn btn-primary btn-lg btn-block"><span class=" li_search"></span>&nbsp;关键词预览</button></a>
+                        </p>
+                        &nbsp;
+                      </div>
+                      <div id="banner">
+                        <div class="pic">
+                            <a href="articles/1.html" style="display:block"><img alt="" src="../static/images/1.jpg" /></a>
+                            <a href="articles/2.html"><img alt="" src="../static/images/2.jpg" /></a>
+                            <a href="articles/3.html"><img alt="" src="../static/images/3.jpg" /></a>
+                            <a href="articles/4.html"><img alt="" src="../static/images/4.jpg" /></a>
+                            <a href="articles/5.html"><img alt="" src="../static/images/5.jpg" /></a>
+                        </div>
+                        <div class="btn1">
+                            <ul>
+                                <li class="one">1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                            </ul>
+                        </div>
+                      </div>
+              </div><!-- /col-lg-3 -->
+            </div><! --/row -->
+        
+          </section>
+      </section>
+
+      <!--main content end-->
+      
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="../static/assets/js/jquery.js"></script>
+    <script src="../static/assets/js/jquery-1.8.3.min.js"></script>
+    <script src="../static/assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="../static/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="../static/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="../static/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="../static/assets/js/jquery.sparkline.js"></script>
+
+
+    <!--common script for all pages-->
+    <script src="../static/assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="../static/assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="../static/assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="../static/assets/js/sparkline-chart.js"></script>
+    <script src="../static/assets/js/zabuto_calendar.js"></script>
+    
+	
+	
+  
+
+  </body>
+</html>

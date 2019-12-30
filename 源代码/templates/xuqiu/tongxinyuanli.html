@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>计算机专业技能分析-通信原理</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../../static/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../static/assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="../../static/assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/assets/lineicons/style.css">
+    
+    <!-- Custom styles for this template -->
+    <link href="../../static/assets/css/style.css" rel="stylesheet">
+    <link href="../../static/assets/css/style-responsive.css" rel="stylesheet">
+
+    <script src="../../static/assets/js/func.js" type="text/javascript"></script>
+
+    <script src="../../static/assets/js/chart-master/Chart.js"></script>
+     <!-- echarts-->
+    <script src="../../static/assets/js/chart-master/Chart.js"></script>
+    <script src="../static/echarts.js"></script>
+    <script src="../static/china.js"></script>
+    <script src="../static/macarons.js"></script>
+
+    <!-- image -->
+    <script type="text/jscript" src="../../static/assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/jscript">
+      $(function () {
+          $("#all li").mouseover(function () {//鼠标进入离开事件
+              $(this).css("background-color", "#ff00ff").siblings().css("background-color", "white");
+              $(this).css({ "background-color": "red", "font-size": "9px" }).siblings().hide();
+          });
+          $(window).scroll(function () {//鼠标滚动事件
+              var _top = $(window).scrollTop(); //获得鼠标滚动的距离
+          });
+          //手动播放图片
+          $(".btn1 ul li").hover(function () {
+              $(this).addClass("one").siblings().removeClass("one");
+              index = $(this).index();
+              i = index;
+              $(".pic a").eq(index).stop().fadeIn(500).show().siblings().stop().fadeIn(500).hide();
+          });
+          //自动播放图片
+          var i = 0;
+          var t = setInterval(autoplay, 2000);
+          function autoplay() {
+              i++;
+              if (i > 4) i = 0;
+              $(".btn1 ul li").eq(i).addClass("one").siblings().removeClass("one");
+              $(".pic a").eq(i).stop().fadeIn(500).show().siblings().stop().fadeIn(500).hide();
+          }
+          $("#banner").hover(function () {
+              clearInterval(t);
+          }, function () {
+              t = setInterval(autoplay, 2000);
+          });
+      });
+    </script>
+
+    
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a class="logo"><b>职业需求分析</b></a>
+            <!--logo end-->
+            <div class="top-menu">
+              <ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="../articles/us.html">关于我们</a></li>
+              </ul>
+            </div>
+      </header>
+      <!--header end-->
+ 
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+                  <p class="centered"><a><img src="../../static/assets/img/1.jpg" class="img-circle" width="100"></a></p>
+                  <h5 class="centered">参考列表</h5>
+                    
+                  <li class="mt">
+                      <a class="active" href="../main.html">
+                          <i class="fa fa-dashboard"></i>
+                          <span>主页</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="../location.html" >
+                          <i class="li_location"></i>
+                          <span>职位地域分布</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu" onclick="f3();">
+                      <a>
+                          <i class="li_banknote"></i>
+                          <span>省份工资调查</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu" >
+                      <a href="../resume.html">
+                          <i class="li_search"></i>
+                          <span>简历分析</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>科普小文章</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="../articles/1.html">信息时代</a></li>
+                          <li><a  href="../articles/2.html">大数据时代</a></li>
+                          <li><a  href="../articles/3.html">云计算</a></li>
+                          <li><a  href="../articles/4.html">数据挖掘</a></li>
+                          <li><a  href="../articles/5.html">大数据存储</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+     
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              <div class="row">
+              <div class="col-lg-9" >  
+                 &nbsp;
+                 <button type="button" class="btn btn-default btn-lg btn-block"><h2>模型展示</h2></button>
+                <div class="content-panel">
+                  <div class="panel-body text-center">
+                    <a href="ruanjiankaifa.html"><button type="button" class="btn btn-theme02">软件开发</button></a>&nbsp;&nbsp;
+                    <a href="ruanjianceshi.html"><button type="button" class="btn btn-theme02">软件测试</button></a>&nbsp;&nbsp;
+                    <a href="wangluoanquan.html"><button type="button" class="btn btn-theme02">网络安全</button></a>&nbsp;&nbsp;
+                    <a href="dianzishangwu.html"><button type="button" class="btn btn-theme02">电子商务</button></a>&nbsp;&nbsp;
+                    <a href="tongxinyuanli.html"><button type="button" class="btn btn-theme02">通信原理</button></a>&nbsp;&nbsp;
+                    <a href="duomeitijishu.html"><button type="button" class="btn btn-theme02">多媒体技术</button></a>&nbsp;&nbsp;
+                    
+                    <div id="main" style="width:1000px;height:550px;"></div>
+                    <script>
+                    var mydata = [ ];
+
+                    var names=[];
+
+                    $.ajax({
+                              type : "get",
+                              async : true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+                              url : "http://127.0.0.1:5000/xuqiu/tongxinyuanli", //请求发送到TestServlet处
+                              data : {"keyword":123,"func":1},
+                              //dataType : "jsonp", //返回数据形式为json
+                              success : function(result) {
+                              //请求成功时执行该函数内容，result即为服务器返回的json对象
+                                if (result) {
+                                names=result;
+                                 chart.setOption( {
+                        <!--title : {-->
+                            <!--text: '南丁格尔玫瑰图',-->
+                            <!--subtext: '纯属虚构',-->
+                            <!--x:'center'-->
+                        <!--},-->
+                        tooltip : {
+                            trigger: 'item',
+                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        },
+                        legend: {
+                            x : 'center',
+                            y : '80%',
+                            data:names
+                        },
+                        toolbox: {
+                            show : true,
+                            feature : {
+                                mark : {show: true},
+                                dataView : {show: true, readOnly: false},
+                                magicType : {
+                                    show: true,
+                                    type: ['pie', 'funnel']
+                                },
+                                restore : {show: true},
+                                saveAsImage : {show: true}
+                            }
+                        },
+                        calculable : true,
+                        series : [
+                            {
+                                name:'面积模式',
+                                type:'pie',
+                                radius : [30, 110],
+                                center : ['50%', '40%'],
+                                roseType : 'area',
+                                data:names
+                            }
+                        ]
+                    });
+                                    }},
+
+                            error : function(errorMsg) {//请求失败时执行该函数
+                            alert("图表请求数据失败!");
+                            }
+                            })
+
+                 var chart = echarts.init(document.getElementById('main'),'macarons');
+
+                      </script>
+
+                   <script>
+
+                       var mydata = [ ];
+
+
+                    var names=[];
+                    var nums=[];
+
+
+
+function getEntity(form) {
+
+     var result = {};
+
+     $(form).find("[data-field]").each(function() {
+
+         var field = $(this).attr("data-field");
+
+         var val;
+
+
+
+         if ($(this).attr('type') == 'checkbox') {
+
+             val = $(this).prop('checked');
+
+         } else if ($(this).attr('type') == 'radio') {
+
+             val = $(this).prop('checked');
+
+         } else {
+
+             val = $(this).val();
+
+         }
+
+
+
+         // 获取单个属性的值,并扩展到result对象里面
+
+         getField(field.split('.'), val, result);
+
+     });
+
+     return result;
+
+ }
+
+
+
+function getField(fieldNames, value, result) {
+
+    if (fieldNames.length > 1) {
+
+        for (var i = 0; i < fieldNames.length - 1; i++) {
+
+            if (result[fieldNames[i]] == undefined) {
+
+                result[fieldNames[i]] = {}
+
+            }
+
+            result = result[fieldNames[i]];
+
+        }
+
+        result[fieldNames[fieldNames.length - 1]] = value;
+
+    } else {
+
+        result[fieldNames[0]] = value;
+
+    }
+
+}
+
+
+function setEntity(form, entity) {
+
+
+
+    $(form).find("[data-field]").each(function() {
+
+
+
+        var field = $(this).attr("data-field");
+
+        fieldNames = field.split('.');
+
+        var value = JSON.parse(JSON.stringify(entity));
+
+        for (var index = 0; index < fieldNames.length; index++) {
+
+            value = value[fieldNames[index]];
+
+            if (!value) {
+
+                break;
+
+            }
+
+        }
+
+
+
+        if ($(this).attr("type") === "checkbox" ||
+
+            $(this).attr("type") === "radio") {
+
+            $(this).attr('checked', Boolean(value));
+
+        } else {
+
+            if (value) {
+
+                $(this).val(value);
+
+            } else {
+
+                $(this).val("");
+
+            }
+
+        }
+
+    })
+
+}
+function getUrlParam(key) {
+    // 获取参数
+    var url = window.location.search;
+    // 正则筛选地址栏
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+    // 匹配目标参数
+    var result = url.substr(1).match(reg);
+    //返回参数值
+    return result ? decodeURIComponent(result[2]) : null;
+}
+ var data= getEntity("#form");
+setEntity("#form", data);
+
+<!--console.log(data);-->
+                    $.ajax({
+                              type : "get",
+                              async : true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+                              url : "http://127.0.0.1:5000/resume/", //请求发送到TestServlet处
+                              data :data,
+                              //dataType : "jsonp", //返回数据形式为json
+                              data:{"select1":getUrlParam('city'),"select2":getUrlParam('major'),"textArea1":getUrlParam('text')},
+                              success : function(result) {
+                              //请求成功时执行该函数内容，result即为服务器返回的json对象
+                                if (result) {
+                                console.log(result);
+                                  names=result[0]['node'];
+                                  nums=result[0]['link'];
+                                  console.log(names);
+                                  chart.setOption( {
+
+        title: {
+            text: '',
+            subtext: 'Circular layout',
+            top: 'bottom',
+            left: 'right'
+        },
+        tooltip: {},
+        legend: [{
+            // selectedMode: 'single',
+            //data: categories.map(function (a) {
+            //    return a.name;
+            //})
+        }],
+        animationDurationUpdate: 1000,
+        animationEasingUpdate: 'quinticInOut',
+        series : [
+            {
+                name: '',
+                type: 'graph',
+                layout: 'force',
+                tooltip : {
+                   trigger: 'item',
+                   formatter: '{b}'
+                  },
+                circular: {
+                    rotateLabel: true
+                },
+                data:names,
+                links: nums,
+                //categories: categories,
+                roam: true,
+                symbol: 'circle',
+                symbolSize: 25,
+
+                label: {
+                    normal: {
+                        position: 'right',
+                        show: true
+                    }
+                },
+                lineStyle: {
+                    normal: {
+                        color: 'source',
+                        curveness: 0.3
+                    }
+                },
+                force: {
+                    repulsion: 300
+                }
+
+            }
+        ]
+
+      });
+
+
+                                    }},
+
+                            error : function(errorMsg) {//请求失败时执行该函数
+                            alert("图表请求数据失败!");
+                            }
+                            })
+
+
+                    var chart = echarts.init(document.getElementById('main'),'macarons');
+
+
+
+                      </script>
+
+                  </div>
+                </div>
+
+                <!--简历分析-->
+                      <div class="col-lg-6 " style="display:none;z-index:1;position:absolute;left: 300px;top: 50px" id="tab1">
+
+                        <div class="grey-panel  donut-chart">
+                          <div class="grey-header">
+                            <h3>简历分析</h3>
+                          </div>
+                          <form class="form-horizontal tasi-form" method="get" id="form" action="resume.html" onsubmit="return checklength()">
+                            <div class="form-group">
+                              <label class="col-md-4  col-sm-4"><h3>姓名：</h3></label>
+
+                                <input type="text"  class="form-control" placeholder="请输入姓名">
+
+                            </div>
+                            <div class="form-group">
+                              <label class="col-md-4  col-sm-4"><h3>省份：</h3></label>
+                              <select data-field='select1' class="form-control"  name="city">
+                                <option value="安徽">安徽</option>
+                                <option  value="北京">北京</option>
+                                <option value="重庆">重庆</option>
+                                <option value="福建">福建</option>
+                                <option value="甘肃">甘肃</option>
+                                <option value="广东">广东</option>
+                                <option value="广西">广西</option>
+                                <option value="贵州">贵州</option>
+                                <option value="海南">海南</option>
+                                <option value="河北">河北</option>
+                                <option value="河南">河南</option>
+                                <option value="黑龙江">黑龙江</option>
+                                <option value="湖北">湖北</option>
+                                <option value="湖南">湖南</option>
+                                <option value="吉林">吉林</option>
+                                <option value="江苏">江苏</option>
+                                <option value="江西">江西</option>
+                                <option value="辽宁">辽宁</option>
+                                <option value="内蒙古">内蒙古</option>
+                                <option value="宁夏">宁夏</option>
+                                <option value="青海">青海</option>
+                                <option value="山东">山东</option>
+                                <option value="山西">山西</option>
+                                <option value="陕西">陕西</option>
+                                <option value="上海">上海</option>
+                                <option value="四川">四川</option>
+                                <option value="天津">天津</option>
+                                <option value="西藏">西藏</option>
+                                <option value="新疆">新疆</option>
+                                <option value="云南">云南</option>
+                                <option value="浙江">浙江</option>
+
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-md-4  col-sm-4"><h3>技能：</h3></label>
+                              <select class="form-control" data-field='select2' name="major" >
+                                <option value="软件开发">软件开发</option>
+                                <option value="软件测试">软件测试</option>
+                                <option value="网络安全">网络安全</option>
+                                <option value="通信原理">通信原理</option>
+                                <option value="电子商务">电子商务</option>
+                                <option value="多媒体设计">多媒体设计</option>
+                              </select>
+                            </div>
+
+                            <div class="form-group">
+                              <label class="col-md-4  col-sm-4"><h3>个人描述：</h3></label>
+                                <textarea data-field='textArea1'  name="text" rows="4" class="form-control2" placeholder="该匹配结果与您输入的有效关键词的长度有关，为保证匹配的准确性，请尽可能输入二十个字及以上的不包括任何其他无关字符的简历内容" style="resize: none;height: 100px" id="mytext"></textarea>
+                            </div>
+
+
+                            <div class="form-group">
+                              <label class="col-md-6  col-sm-6"><h3>是否有工作经验：</h3></label>
+                              <select class="form-control1" >
+                                <option>是</option>
+                                <option>否</option>
+                              </select>
+                            </div>
+
+                            <br/>
+                            <div class="form-group">
+
+                              <div class="col-md-6  col-sm-3">
+                                <button type="submit" class="btn btn-danger" id="submit" onclick="setEntity(form, entity)"><h4>提交</h4></button>
+                              </div>
+                              <div class="col-md-6  col-sm-3">
+                                <button type="button" class="btn btn-danger" onclick="f1()"><h4>取消</h4></button>
+                              </div>
+                            </div>
+                            <br/>
+
+                          </form>
+                        </div>
+                        
+                    </div>
+                    <!--省份调查-->
+                    <div class="col-lg-6 " style="display:none;z-index:1;position:absolute;left: 300px;top: 150px" id="tab3">
+                      
+                        <div class="grey-panel pn donut-chart">
+                          <div class="grey-header">
+                            <h3>省份工资调查</h3>
+                          </div>
+                          <form class="form-horizontal tasi-form" method="get" action="">
+                            <div class="form-group">
+                              <label class="col-md-4  col-sm-4"><h3>省份：</h3></label>
+                              <select  name="province" class="form-control" id="province">
+                                <option value="0">北京</option>
+                                <option value="1">重庆</option>
+                                <option value="2">福建</option>
+                                <!--<option value="3">广东</option>-->
+                                <option value="4">河北</option>
+                                <option value="5">湖南</option>
+                                <option value="6">江苏</option>
+                                <option value="7">山东</option>
+                                <option value="8">上海</option>
+                                <option value="9">浙江</option>
+                              </select>
+                            </div>
+                            <br/>
+                            <div class="form-group">
+                              <div class="col-md-6  col-sm-3">
+                                <button type="button" class="btn btn-danger" onclick="setsubmit(this)"><h4>提&nbsp;交</h4></button>
+                              </div>
+                               <div class="col-md-6  col-sm-3">
+                                <button type="button" class="btn btn-danger" onclick="f3()"><h4>取消</h4></button>
+                              </div>
+                            </div>
+                            <br/>
+
+                          </form>
+                        </div>
+                        
+                    </div>      
+                                        
+                      
+                     
+                        
+                     
+              </div>
+               <div class="col-lg-3 ds" >
+                  <h3>就业前景预测</h3>
+                                        
+                      <!-- First Action -->
+                      <div class="desc">
+                        &nbsp;
+                        <p>
+                          <a href="../screen.html"><button type="button" class="btn btn-primary btn-lg btn-block"><span class=" li_search"></span>&nbsp;锁屏</button></a>
+                        </p>
+                      
+                        &nbsp;
+                        <p>
+                          <a href="../keyword.html"><button type="button" class="btn btn-primary btn-lg btn-block"><span class=" li_search"></span>&nbsp;关键词预览</button></a>
+                        </p>
+                        &nbsp;
+                      </div>
+                      <div id="banner">
+                        <div class="pic">
+                            <a href="../articles/1.html" style="display:block"><img alt="" src="../../static/images/1.jpg" /></a>
+                            <a href="../articles/2.html"><img alt="" src="../../static/images/2.jpg" /></a>
+                            <a href="../articles/3.html"><img alt="" src="../../static/images/3.jpg" /></a>
+                            <a href="../articles/4.html"><img alt="" src="../../static/images/4.jpg" /></a>
+                            <a href="../articles/5.html"><img alt="" src="../../static/images/5.jpg" /></a>
+                        </div>
+                        <div class="btn1">
+                            <ul>
+                                <li class="one">1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                            </ul>
+                        </div>
+                      </div>
+              </div><!-- /col-lg-3 -->
+              </div><! --/row -->
+            </div>
+          </section>
+      </section>
+
+      <!--main content end-->
+      
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="../../static/assets/js/jquery.js"></script>
+    <script src="../../static/assets/js/jquery-1.8.3.min.js"></script>
+    <script src="../../static/assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="../../static/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="../../static/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="../../static/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="../../static/assets/js/jquery.sparkline.js"></script>
+
+
+    <!--common script for all pages-->
+    <script src="../../static/assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="../../static/assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="../../static/assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="../../static/assets/js/sparkline-chart.js"></script>
+  <script src="../../static/assets/js/zabuto_calendar.js"></script>
+  
+  
+  
+  
+
+  </body>
+</html>
